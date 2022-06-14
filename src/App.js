@@ -9,10 +9,23 @@ export default function App() {
   const filterItem = items.map((item) => {
     return <Items key={item.id} {...item} />
   })
+
+  const category = ["all", ...new Set(menu.map((item) => item.category))]
+
+  function filterCategory(category) {
+    if (category === "all") return setItems(menu)
+
+    const filterItem = menu.filter((item) => item.category === category)
+    setItems(filterItem)
+  }
+
   return (
     <div>
-      <Category />
-      {filterItem}
+      <header>
+        <h1>Menu</h1>
+      </header>
+      <Category handle={filterCategory} category={category} />
+      <div className="items">{filterItem}</div>
     </div>
   )
 }
