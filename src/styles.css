@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+}
+
+.item {
+  width: 350px;
+  height: auto;
+}
+.product-image {
+  width: 100%;
+  border: 5px solid saddlebrown;
+}
